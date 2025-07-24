@@ -1,0 +1,35 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/img"
+public_folder: "/assets/img"
+
+collections:
+  - name: "about"
+    label: "Sobre el proyecto"
+    files:
+      - file: "content/about.md"
+        label: "Sobre el proyecto"
+        name: "about"
+        fields:
+          - {label: "Contenido", name: "body", widget: "markdown"}
+
+  - name: "expositores"
+    label: "Expositores"
+    folder: "content/expositores"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Nombre", name: "title", widget: "string"}
+      - {label: "Imagen", name: "image", widget: "image"}
+      - {label: "Instagram", name: "instagram", widget: "string"}
+
+  - name: "sponsors"
+    label: "Sponsors"
+    folder: "content/sponsors"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Nombre", name: "title", widget: "string"}
+      - {label: "Logo", name: "image", widget: "image"}
